@@ -2,6 +2,26 @@
 #include <stdlib.h>
 #include "search_algos.h"
 /**
+  * print_array - print helper function
+  * @temp: array to print
+  * @high: high bound of array to print
+  * @low: low bound of array to print
+  *
+  */
+void print_array(int *temp, int high, int low)
+{
+
+	printf("Searching in array: ");
+
+	for (; low <= high; low++)
+	{
+		if (low != high)
+			printf("%d, ", temp[low]);
+		else
+			printf("%d\n", temp[low]);
+	}
+}
+/**
   * bin_search - binary search function
   * @low: the lower boundary of array segment to search
   * @high: the upper boundary of array segment to search
@@ -15,11 +35,14 @@ int bin_search(int low, int high, int *array, int target)
 
 	mid = (high + low) / 2;
 
+
 	if (target == array[mid])
 		return (mid);
 
+
 	if (high >= low)
 	{
+		print_array(array, high, low);
 		if (mid < target)
 			return (bin_search(mid + 1, high, array, target));
 		else
