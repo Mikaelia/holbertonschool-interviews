@@ -1,3 +1,3 @@
 # Warmup
 
->Holberton School interview practice
+>Interview practice
